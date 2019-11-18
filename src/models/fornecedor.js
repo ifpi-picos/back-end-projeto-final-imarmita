@@ -7,9 +7,10 @@ const camposFornecedor = {
     email: {type: String, required: true, unique: true,},
     telefone: {type: String, required: true},
     senha: {type: String, required: true},
-    endereço: {type: String, required: true},
+    endereco: {type: String, required: true},
     bairro: {type: String, required: true},
     cidade: {type: String, required: true},
+    cep: {type: String, require: true},
 }
 
 const schema = new Schema(camposFornecedor);

@@ -5,13 +5,15 @@ class Fornecedor{
     }
 
     async cadastrarFornecedor(req, res){
-
+        
         try {
+            console.log("try")
             const fornecedor = new this.fornecedor(req.body);
             await fornecedor.save();
-            res.status(200).send("Fornecedor Cadastrado!"); 
+            res.status(201).json({msg: "Fornecedor cadastrado"}); 
         } catch (error) {
-            res.status(400).send(error);
+            console.log(error)
+            res.status(401).send(error);
         }
         
     }
