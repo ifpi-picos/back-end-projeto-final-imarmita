@@ -5,7 +5,7 @@ const ClienteModel = require('../models/cliente');
 const ClienteControler = require('../controllers/clientes');
 const cliente = new ClienteControler(ClienteModel);
 
-router.post('/cadastrar', (req, res)=>{
+router.post('/', (req, res)=>{
     cliente.cadastrarCliente(req, res);
 });
 

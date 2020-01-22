@@ -5,7 +5,7 @@ class Fornecedor{
     }
 
     async cadastrarFornecedor(req, res){
-        
+        console.log("entrei")
         try {
             const fornecedor = new this.fornecedor(req.body);
             await fornecedor.save();
