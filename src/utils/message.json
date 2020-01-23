@@ -7,6 +7,7 @@
     "createUser": "Usuário cadastrado com sucesso!",
     "editUser": "Usuário alterado com sucesso!",
     "removeUser": "Usuário removido com sucesso!",
-    "photosSend": "Imagem enviada com sucesso, aguarde a validação"
+    "photosSend": "Imagem enviada com sucesso, aguarde a validação",
+    "usuarioLogado": "Nenhum usuario encontrado"
   }
 }

@@ -5,10 +5,12 @@ const clienteRoute = require('./clientes')
 const pratoRoute = require('./prato');
 const prato_semanaRoute = require('./prato_semana');
 const pedidoRoute = require('./pedidos');
+const loginRoute = require("./login");
 
 const router = express.Router();
 
 router.use('/pedido', pedidoRoute);
+router.use('/login', loginRoute);
 router.use('/prato_semana', prato_semanaRoute);
 router.use('/prato', pratoRoute);
 router.use('/clientes', clienteRoute);
