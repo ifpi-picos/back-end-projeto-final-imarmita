@@ -17,6 +17,11 @@ class Fornecedor{
         
     }
 
+    async atualizarPerfil(req, res){
+        
+        res.send({msg: "teste"})
+    }
+
 }
 
 module.exports = Fornecedor;

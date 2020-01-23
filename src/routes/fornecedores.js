@@ -9,4 +9,8 @@ router.post("/", (req, res)=>{
     fornecedor.cadastrarFornecedor(req,res);
 });
 
+router.put("/:id", (req, res) =>{
+    fornecedor.atualizarPerfil(req,res)
+})
+
 module.exports = router;

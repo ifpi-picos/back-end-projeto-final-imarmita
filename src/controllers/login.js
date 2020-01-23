@@ -5,6 +5,7 @@ class Login{
     };
 
     async login(req, res){
+        console.log(req.body)
         const user = req.body;
         try {
             if(user.tipo === "cliente"){
@@ -13,14 +14,19 @@ class Login{
                     if(usuario.senha === user.senha){
                         const usuarioLogado = {
                             msg: "Usuario logado",
-                            usuario: usuario
+                            usuario: {
+                                id: usuario._id,
+                                nome: usuario.nome,
+                                tipo: "cliente",
+                                email: usuario.email
+                            }
                         }
                         res.status(200).send(usuarioLogado);
                     } else {
-                        res.status(200).send({msg: "Senha incorreta"})
+                        res.status(400).send({msg: "Senha incorreta"})
                     }
                 } else {
-                    res.status(200).send({ msg: 'Nenhum usuario encontrado'});
+                    res.status(400).send({ msg: 'Nenhum usuario encontrado'});
                 }
                 
             } else if(user.tipo === "fornecedor"){
@@ -29,14 +35,19 @@ class Login{
                     if(fornecedor.senha === user.senha){
                         const usuarioLogado = {
                             msg: "Usuario logado",
-                            usuario: fornecedor
+                            usuario: {
+                                id: fornecedor._id,
+                                nome: fornecedor.nome,
+                                tipo: "fornecedor",
+                                email: fornecedor.email
+                            }
                         }
                         res.status(200).send(usuarioLogado);
                     } else {
-                        res.status(200).send({msg: "Senha incorreta"})
+                        res.status(400).send({msg: "Senha incorreta"})
                     }
                 } else {
-                    res.status(200).send({ msg: 'Nenhum usuario encontrado'});
+                    res.status(400).send({ msg: 'Nenhum usuario encontrado'});
                 }
             } else{
                 res.status(400).send({

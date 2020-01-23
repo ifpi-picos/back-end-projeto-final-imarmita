@@ -18,6 +18,10 @@ const prato = new Schema({
     itens: {
         type: Array,
         require: true,
+    },
+    img:{
+        type: String,
+        require: false,
     }
 })
 
