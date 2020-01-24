@@ -3,7 +3,7 @@ const Config = require("../config/config");
 
 
 function connect(){
-    mongoose.connect(Config.MONGO_LOCAL, {useNewUrlParser: true, useUnifiedTopology: true},() =>{
+    mongoose.connect(Config.MONGO_SERVER, {useNewUrlParser: true, useUnifiedTopology: true},() =>{
         console.log("conectado ao Banco de Dados")
     });
 }
